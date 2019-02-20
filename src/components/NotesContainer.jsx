@@ -20,7 +20,7 @@ class NotesContainer extends Component {
 
           {this.Store.notesFiltered.map ((item, index) =>
 
-            (<Note key={index} category={item.category} handleOnDelete={this.handleOnDeleteItem(index)} title={item.title} textArea={item.text}/> )
+            (<Note key={index} date={item.datetime} category={item.category} handleOnDelete={this.handleOnDeleteItem(index)} title={item.title} textArea={item.text}/> )
 
           )
           }

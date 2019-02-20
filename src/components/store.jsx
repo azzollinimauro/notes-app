@@ -81,6 +81,12 @@ class Store {
   return this.notesFiltered
   }
 
+  @computed
+  get datetime (){
+    const date= new Date();
+    const time= (date.getDate()) + '-' + (date.getMonth()+1)+ '-' + (date.getFullYear()) + ' | ' + (date.getHours())+':'+(date.getMinutes()) + ' hs'
+    return time
+  }
 
   @action
   submit() {
@@ -90,7 +96,7 @@ class Store {
     } else {
 
       if (this.latestTitle === '') {
-        this.notes[this.notes.length] = ({title: 'Sin título', text: this.latestText, category: (this.categories[(this.select)].name)})
+        this.notes[this.notes.length] = ({title: 'Sin título', datetime: this.datetime,text: this.latestText, category: (this.categories[(this.select)].name)})
         console.log('filterselect',this.notesFiltered)
 
       } else {
