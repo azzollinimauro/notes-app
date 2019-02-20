@@ -62,7 +62,7 @@ class InputBox extends Component {
           </select>
           </div>
 
-          <button onClick={this.submit}>Agregar Nota</button>
+          <button className='addNote' onClick={this.submit}>Agregar Nota</button>
 
         </div>
 
