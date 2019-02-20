@@ -18,7 +18,7 @@
 
 #notes{
 	display: flex;
-	flex-direction: row;
+	flex-direction: row-reverse;
 	justify-content: center;
 	flex-wrap: wrap;
 
@@ -47,25 +47,44 @@ textarea{
 }
 
 .filterContainer{
-	padding-top: 15px;
+	display: inline-block;
+	padding: 10px;
+	-webkit-transition-duration: 0.4s; /* Safari */
+	transition-duration: 0.4s;
 }
 button{
-	background: grey;
+	color: darkorange;
+	background: #282c34;
 	margin-top: 15px;
 	padding:10px;
 	font-weight: bold;
 	border-radius: 10px;
 	border: none;
+	-webkit-transition-duration: 0.4s; /* Safari */
+	transition-duration: 0.4s;
 }
 
+select{
+	background: black;
+	border: none;
+	color: white;
+}
+.filter{
+	margin-top: 10px;
+	background: #282c34;
+	color: white;
+	border-radius: 15px;
+	border-style: solid;
+}
 .date{
 	font-style: italic;
 	font-size: 15px;
 	color: #61dafb;
 }
 .addNote:hover{
-	color: white;
-	background: #282c34;
+	padding: 12px;
+	color:  #61dafb;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 .eliminar{

@@ -21,8 +21,14 @@ class Filter extends Component {
     console.log(this.Store.notesFiltered)
   }
 
+  handleOnChangeOrderByDate =(event)=>{
+    this.Store.setOrderByDate(event.target.value)
+    this.Store.setFilterSelect(this.Store.filterSelected)
+  }
+
   render() {
     return (
+      <div className='filter'>
       <div className='filterContainer'>
         <span>Filtrar por categorías: </span>
         <select disabled={this.Store.disabled} onChange={this.handleOnChangeSelectFilter}>
@@ -33,6 +39,18 @@ class Filter extends Component {
           }
 
         </select>
+      </div>
+        <div className='filterContainer'>
+          <span>Ordenar por fecha: </span>
+          <select disabled={this.Store.disabled} onChange={this.handleOnChangeOrderByDate}>
+            <option value={1}>Más nuevo a más antiguo</option>
+            <option value={2}>Más antiguo a más nuevo</option>
+
+
+
+
+          </select>
+        </div>
       </div>
     )
   }

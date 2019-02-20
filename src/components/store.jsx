@@ -11,6 +11,7 @@ class Store {
   @observable filterSelected = 0
   @observable categories=[{id: TODAS, name:'Cargando..'}]
   @observable disabled= true;
+  @observable orderByDate=1
 
   @action
   fetch() {
@@ -40,6 +41,11 @@ class Store {
   @action
   setLatestTitle(value) {
     this.latestTitle = value;
+  }
+
+  @action
+  setOrderByDate(value) {
+    this.orderByDate = value;
   }
 
   @action
@@ -75,9 +81,15 @@ class Store {
       this.notesFiltered = this.notes.filter(item => item.category === this.categories[value].name)
     }
 
+    if (this.orderByDate==='2'){
+      console.log('entre aca')
+      const c=this.notesFiltered.reverse();
+      this.notesFiltered=c
+
+    }
     console.log('filtrado', this.notesFiltered)
     console.log('sin filtrar', this.notes)
-
+    console.log(this.orderByDate)
   return this.notesFiltered
   }
 
@@ -100,7 +112,7 @@ class Store {
         console.log('filterselect',this.notesFiltered)
 
       } else {
-        this.notes[this.notes.length] = ({title: this.latestTitle, text: this.latestText, category: (this.categories[(this.select)].name)})
+        this.notes[this.notes.length] = ({title: this.latestTitle, datetime: this.datetime, text: this.latestText, category: (this.categories[(this.select)].name)})
         console.log('filterselect',this.notesFiltered)
 
       }
