@@ -66,9 +66,13 @@ class InputBox extends Component {
 
         </div>
 
-         <Filter Store={this.Store}/>
-         <NotesContainer Store={this.Store}/>
-
+          {(this.Store.notes.length>0) ? (
+            <div>
+            <Filter Store={this.Store}/>
+            < NotesContainer Store={this.Store}/>
+            </div>
+            ): (<div></div>)
+          }
         </div>
 
 
