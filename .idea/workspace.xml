@@ -3,12 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f8aaeaec-2456-47d6-8abd-79a4120d9579" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Filter.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Filter.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/InputBox.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/InputBox.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Note.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Note.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NotesContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NotesContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/store.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/styles.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -120,8 +114,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/store.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="123" column="81" selection-start-line="123" selection-start-column="81" selection-end-line="123" selection-end-column="81" />
+            <state relative-caret-position="435">
+              <caret line="74" selection-start-line="74" selection-end-line="74" />
               <folding>
                 <element signature="e#0#72#0" expanded="true" />
               </folding>
@@ -179,7 +173,6 @@
       <find>right</find>
       <find>start</find>
       <find>handleOnChangeSelectFilter</find>
-      <find>select</find>
       <find>flex</find>
       <find>fil</find>
       <find>rever</find>
@@ -188,6 +181,7 @@
       <find>editio</find>
       <find>edition</find>
       <find>currentCate</find>
+      <find>select</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -300,7 +294,7 @@
       <workItem from="1550666473140" duration="2614000" />
       <workItem from="1550669752525" duration="433000" />
       <workItem from="1550671069712" duration="10418000" />
-      <workItem from="1550752536477" duration="8534000" />
+      <workItem from="1550752536477" duration="9371000" />
     </task>
     <task id="LOCAL-00001" summary="condition that allows or not to see the notes">
       <created>1550671988489</created>
@@ -330,11 +324,25 @@
       <option name="project" value="LOCAL" />
       <updated>1550685256197</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="edit functions added">
+      <created>1550761151329</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1550761151329</updated>
+    </task>
+    <task id="LOCAL-00006" summary="bug in select category to add item fixed">
+      <created>1550761353403</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1550761353403</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78828000" />
+    <option name="totallyTimeSpent" value="79665000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -370,7 +378,9 @@
     <MESSAGE value="styles added" />
     <MESSAGE value="date added to Notes" />
     <MESSAGE value="order by data and styles added" />
-    <option name="LAST_COMMIT_MESSAGE" value="order by data and styles added" />
+    <MESSAGE value="edit functions added" />
+    <MESSAGE value="bug in select category to add item fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="bug in select category to add item fixed" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/node_modules/react-scripts/package.json" />
@@ -501,8 +511,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/store.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="123" column="81" selection-start-line="123" selection-start-column="81" selection-end-line="123" selection-end-column="81" />
+        <state relative-caret-position="435">
+          <caret line="74" selection-start-line="74" selection-end-line="74" />
           <folding>
             <element signature="e#0#72#0" expanded="true" />
           </folding>
