@@ -71,8 +71,7 @@ class Store {
 
   @action
   setSelect (value){
-    this.select=value
-    console.log(this.select)
+    this.currentCategory=value
   }
 
   @action
@@ -121,11 +120,11 @@ class Store {
       const index= this.condition()
       console.log('array',index)
       if (this.latestTitle === '') {
-        this.notes[index] = ({title: 'Sin título', datetime: ((!this.notes[index])? ((this.datetime)): (this.notes[index].datetime)), text: this.latestText, category: (this.categories[(this.select)].name)})
+        this.notes[index] = ({title: 'Sin título', datetime: ((!this.notes[index])? ((this.datetime)): (this.notes[index].datetime)), text: this.latestText, category: (this.categories[(this.currentCategory)].name)})
         console.log('filterselect',this.notesFiltered)
 
       } else {
-        this.notes[index] = ({title: this.latestTitle, datetime: ((!this.notes[index].datetime)? ((this.datetime)): (this.notes[index].datetime)), text: this.latestText, category: (this.categories[(this.select)].name)})
+        this.notes[index] = ({title: this.latestTitle, datetime: ((!this.notes[index].datetime)? ((this.datetime)): (this.notes[index].datetime)), text: this.latestText, category: (this.categories[(this.currentCategory)].name)})
         console.log('filterselect',this.notesFiltered)
       }
 
