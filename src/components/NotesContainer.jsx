@@ -12,7 +12,7 @@ class NotesContainer extends Component {
   }
 
   handleOnDeleteItem = index => () => this.Store.delete(index)
-
+  handleOnEditNote = index => () => this.Store.edit(index)
   render() {
     return (
 
@@ -20,7 +20,7 @@ class NotesContainer extends Component {
 
           {this.Store.notesFiltered.map ((item, index) =>
 
-            (<Note key={index} date={item.datetime} category={item.category} handleOnDelete={this.handleOnDeleteItem(index)} title={item.title} textArea={item.text}/> )
+            (<Note handleOnEdit={this.handleOnEditNote(index)} key={index} date={item.datetime} category={item.category} handleOnDelete={this.handleOnDeleteItem(index)} title={item.title} textArea={item.text}/> )
 
           )
           }

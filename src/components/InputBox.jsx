@@ -40,7 +40,9 @@ class InputBox extends Component {
   prepareOptions=()=>{
     return this.Store.categories.filter(item => item.id !== 0)
   }
-
+  cancel=() =>{
+    return this.Store.cancel()
+  }
 
     render()
     {
@@ -52,7 +54,7 @@ class InputBox extends Component {
           <textarea placeholder='Texto' id='text' value={this.Store.latestText} onChange={this.handleOnBlurText} onBlur={this.handleOnBlurText}></textarea>
           <div className='selectInput'>
          <span>Categoría: </span>
-            <select disabled={this.Store.disabled} onChange={this.handleOnChangeSelect}>
+            <select value={this.Store.currentCategory} disabled={this.Store.disabled} onChange={this.handleOnChangeSelect}>
               {(this.prepareOptions().length !== 0) ? (
                 this.prepareOptions().map((item) =>
                 <option key={item.id} value={item.id}>{item.name}</option>
@@ -62,8 +64,8 @@ class InputBox extends Component {
           </select>
           </div>
 
-          <button className='addNote' onClick={this.submit}>Agregar Nota</button>
-
+          <button className='addNote' onClick={this.submit}>{(!this.Store.edition.status) ? ("Agregar Nota"):("Editar")}</button>
+          {(this.Store.edition.status) ? ( <button className='cancel' onClick={this.cancel}>Cancelar</button>):(<div></div>)}
         </div>
 
           {(this.Store.notes.length>0) ? (

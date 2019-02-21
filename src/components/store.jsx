@@ -1,4 +1,5 @@
 import {action, observable, computed, decorate, runInAction} from "mobx"
+import React from "react"
 
 const TODAS = 0
 class Store {
@@ -7,11 +8,13 @@ class Store {
   @observable latestText = ''
   @observable notes = (this.getStorage())
   @observable select = 1
+  @observable edition= {status:false, item: null}
   @observable notesFiltered=this.notes
   @observable filterSelected = 0
   @observable categories=[{id: TODAS, name:'Cargando..'}]
   @observable disabled= true;
-  @observable orderByDate=1
+  @observable orderByDate=1;
+  @observable currentCategory=1
 
   @action
   fetch() {
@@ -100,24 +103,34 @@ class Store {
     return time
   }
 
+  condition (){
+    if(this.edition.status===false){
+    return (this.notes.length)
+  }else{
+      console.log('itemdeedicion',this.edition.item)
+    return (this.edition.item)
+  }
+  }
+
   @action
   submit() {
     if (this.latestText === '') {
       alert('ERROR, EL CAMPO DE TEXTO ES REQUERIDO')
       document.getElementById('text').focus();
     } else {
-
+      const index= this.condition()
+      console.log('array',index)
       if (this.latestTitle === '') {
-        this.notes[this.notes.length] = ({title: 'Sin título', datetime: this.datetime,text: this.latestText, category: (this.categories[(this.select)].name)})
+        this.notes[index] = ({title: 'Sin título', datetime: ((!this.notes[index])? ((this.datetime)): (this.notes[index].datetime)), text: this.latestText, category: (this.categories[(this.select)].name)})
         console.log('filterselect',this.notesFiltered)
 
       } else {
-        this.notes[this.notes.length] = ({title: this.latestTitle, datetime: this.datetime, text: this.latestText, category: (this.categories[(this.select)].name)})
+        this.notes[index] = ({title: this.latestTitle, datetime: ((!this.notes[index].datetime)? ((this.datetime)): (this.notes[index].datetime)), text: this.latestText, category: (this.categories[(this.select)].name)})
         console.log('filterselect',this.notesFiltered)
-
       }
 
     }
+    this.edition={status:false, item: null}
     this.notesFiltered=[]
     this.setFilterSelect(this.filterSelected)
     window.localStorage.setItem('notes', JSON.stringify(this.notes))
@@ -127,6 +140,39 @@ class Store {
   }
 
 
+  @action
+  edit(current) {
+    console.log(current)
+    this.latestTitle= this.notesFiltered[current].title
+    this.latestText= this.notesFiltered[current].text
+    this.edition.status= true;
+    (this.categories.forEach((item,index)=>{
+    if (item.name===this.notesFiltered[current].category) {
+      this.currentCategory=item.id
+      this.select=this.currentCategory
+      }
+      }))
+
+    this.notes.forEach((note, index)=>{
+
+        if (note === this.notesFiltered[current]) {
+          console.log('index', index)
+          this.edition.item=index
+        }
+
+
+      })
+
+
+
+  }
+
+  @action
+  cancel(){
+    this.edition.status=false
+    this.latestText=''
+    this.latestTitle=''
+  }
 
   @action
   delete(current) {

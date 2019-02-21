@@ -14,15 +14,20 @@
 	margin-right: 3px;
 	word-wrap: break-word;
 	display: inline-block;
+
 }
 
 #notes{
 	display: flex;
-	flex-direction: row-reverse;
+	flex-direction: row;
 	justify-content: center;
 	flex-wrap: wrap;
+	-webkit-transition-duration: 0.4s; /* Safari */
+	transition-duration: 0.4s;
 
 }
+
+
 .container{
 	display: flex;
 	flex-direction: column;
@@ -86,7 +91,11 @@ select{
 	color:  #61dafb;
 	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
-
+.cancel:hover{
+	padding: 12px;
+	color:  black;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
 .eliminar{
 	background: red;
 	color: white;
@@ -110,4 +119,16 @@ span{
 .selectInput {
 	padding: 8px;
 	display: flex;
+}
+
+img {
+	background: grey;
+	border: none;
+	width: 30px;
+	height: 34px;
+	padding-right: 5px;
+}
+
+.cancel{
+	color: red;
 }

@@ -43,8 +43,8 @@ class Filter extends Component {
         <div className='filterContainer'>
           <span>Ordenar por fecha: </span>
           <select disabled={this.Store.disabled} onChange={this.handleOnChangeOrderByDate}>
-            <option value={1}>Más nuevo a más antiguo</option>
-            <option value={2}>Más antiguo a más nuevo</option>
+            <option value={1}>Más antiguo a más nuevo</option>
+            <option value={2}>Más nuevo a más antiguo</option>
 
 
 
